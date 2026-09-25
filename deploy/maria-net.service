@@ -1,0 +1,17 @@
+[Unit]
+Description=maria_net HTTP daemon
+After=mariadb.service
+Requires=mariadb.service
+
+[Service]
+Type=simple
+User=maria-net
+Group=maria-net
+ExecStart=/usr/local/bin/maria-net daemon --host 127.0.0.1 --port 3306 --user maria_net --password-file /etc/maria-net/daemon.password
+Restart=on-failure
+RestartSec=2
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

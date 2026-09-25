@@ -1,0 +1,8 @@
+.tools/
+.zig-cache/
+zig-out/
+third_party/lib/
+plugin/*.so
+*.password
+.env
+.env.*
